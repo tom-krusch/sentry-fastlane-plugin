@@ -6,7 +6,7 @@ describe Fastlane do
 
         expect do
           Fastlane::FastFile.new.parse("lane :test do
-            sentry_upload_dsym(
+            uninow_sentry_upload_dsym(
               org_slug: 'some_org',
               project_slug: 'some_project',
               dsym_path: '#{dsym_path_1}')
@@ -19,7 +19,7 @@ describe Fastlane do
 
         expect do
           Fastlane::FastFile.new.parse("lane :test do
-            sentry_upload_dsym(
+            uninow_sentry_upload_dsym(
               org_slug: 'some_org',
               api_key: 'something123',
               auth_token: 'something123',
@@ -34,7 +34,7 @@ describe Fastlane do
 
         expect do
           Fastlane::FastFile.new.parse("lane :test do
-            sentry_upload_dsym(
+            uninow_sentry_upload_dsym(
               org_slug: 'some_org',
               api_key: 'something123',
               project_slug: 'some_project',
@@ -52,7 +52,7 @@ describe Fastlane do
         expect(Fastlane::Helper::SentryHelper).to receive(:call_sentry_cli).with(["sentry-cli", "upload-dsym", "--symbol-maps", "1.bcsymbol", dsym_path_1]).and_return(true)
 
         Fastlane::FastFile.new.parse("lane :test do
-          sentry_upload_dsym(
+          uninow_sentry_upload_dsym(
             org_slug: 'some_org',
             api_key: 'something123',
             project_slug: 'some_project',
@@ -67,7 +67,7 @@ describe Fastlane do
         expect(Fastlane::Helper::SentryHelper).to receive(:call_sentry_cli).with(["sentry-cli", "upload-dsym", dsym_path_1, dsym_path_1]).and_return(true)
 
         Fastlane::FastFile.new.parse("lane :test do
-          sentry_upload_dsym(
+          uninow_sentry_upload_dsym(
             org_slug: 'some_org',
             api_key: 'something123',
             project_slug: 'some_project',
@@ -84,7 +84,7 @@ describe Fastlane do
         expect(Fastlane::Helper::SentryHelper).to receive(:call_sentry_cli).with(["sentry-cli", "upload-dsym", "--info-plist", "Info.plist", dsym_path_1]).and_return(true)
 
         Fastlane::FastFile.new.parse("lane :test do
-          sentry_upload_dsym(
+          uninow_sentry_upload_dsym(
             org_slug: 'some_org',
             api_key: 'something123',
             project_slug: 'some_project',

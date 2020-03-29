@@ -5,7 +5,7 @@ describe Fastlane do
         sourcemap_path = File.absolute_path './assets/this_does_not_exist.js.map'
         expect do
           Fastlane::FastFile.new.parse("lane :test do
-            sentry_upload_sourcemap(
+            uninow_sentry_upload_sourcemap(
               org_slug: 'some_org',
               api_key: 'something123',
               project_slug: 'some_project',
@@ -23,7 +23,7 @@ describe Fastlane do
         expect(File).to receive(:exist?).with("1.map").and_return(true)
 
         Fastlane::FastFile.new.parse("lane :test do
-            sentry_upload_sourcemap(
+          uninow_sentry_upload_sourcemap(
               org_slug: 'some_org',
               api_key: 'something123',
               project_slug: 'some_project',
@@ -43,7 +43,7 @@ describe Fastlane do
         expect(File).to receive(:exist?).with("1.map").and_return(true)
 
         Fastlane::FastFile.new.parse("lane :test do
-            sentry_upload_sourcemap(
+            uninow_sentry_upload_sourcemap(
               org_slug: 'some_org',
               api_key: 'something123',
               project_slug: 'some_project',
@@ -63,7 +63,7 @@ describe Fastlane do
         expect(File).to receive(:exist?).with("1.map").and_return(true)
 
         Fastlane::FastFile.new.parse("lane :test do
-            sentry_upload_sourcemap(
+            uninow_sentry_upload_sourcemap(
               org_slug: 'some_org',
               api_key: 'something123',
               project_slug: 'some_project',
@@ -82,7 +82,7 @@ describe Fastlane do
         expect(File).to receive(:exist?).with("1.map").and_return(true)
 
         Fastlane::FastFile.new.parse("lane :test do
-            sentry_upload_sourcemap(
+            uninow_sentry_upload_sourcemap(
               org_slug: 'some_org',
               api_key: 'something123',
               project_slug: 'some_project',

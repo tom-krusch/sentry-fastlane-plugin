@@ -8,7 +8,7 @@ describe Fastlane do
 
         expect do
           Fastlane::FastFile.new.parse("lane :test do
-            sentry_upload_proguard(
+            uninow_sentry_upload_proguard(
               org_slug: 'some_org',
               project_slug: 'some_project',
               mapping_path: '#{mapping_path}',
@@ -23,7 +23,7 @@ describe Fastlane do
         
         expect do
           Fastlane::FastFile.new.parse("lane :test do
-            sentry_upload_proguard(
+            uninow_sentry_upload_proguard(
               org_slug: 'some_org',
               api_key: 'something123',
               auth_token: 'something123',
@@ -40,7 +40,7 @@ describe Fastlane do
 
         expect do
           Fastlane::FastFile.new.parse("lane :test do
-            sentry_upload_proguard(
+            uninow_sentry_upload_proguard(
               org_slug: 'some_org',
               api_key: 'something123',
               project_slug: 'some_project',
@@ -56,7 +56,7 @@ describe Fastlane do
 
         expect do
           Fastlane::FastFile.new.parse("lane :test do
-            sentry_upload_proguard(
+            uninow_sentry_upload_proguard(
               org_slug: 'some_org',
               api_key: 'something123',
               project_slug: 'some_project',

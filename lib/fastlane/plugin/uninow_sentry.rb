@@ -1,4 +1,4 @@
-require 'fastlane/plugin/uninow/sentry/version'
+require 'fastlane/plugin/uninow_sentry/version'
 
 module Fastlane
   module Sentry

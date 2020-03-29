@@ -8,7 +8,7 @@ describe Fastlane do
         expect(Fastlane::Helper::SentryHelper).to receive(:call_sentry_cli).with(["sentry-cli", "releases", "set-commits", "app.idf-1.0"]).and_return(true)
 
         Fastlane::FastFile.new.parse("lane :test do
-            sentry_set_commits(
+            uninow_sentry_set_commits(
               version: '1.0',
               app_identifier: 'app.idf')
         end").runner.execute(:test)
@@ -20,7 +20,7 @@ describe Fastlane do
         expect(Fastlane::Helper::SentryHelper).to receive(:call_sentry_cli).with(["sentry-cli", "releases", "set-commits", "1.0"]).and_return(true)
 
         Fastlane::FastFile.new.parse("lane :test do
-            sentry_set_commits(
+            uninow_sentry_set_commits(
               version: '1.0')
         end").runner.execute(:test)
       end
@@ -31,7 +31,7 @@ describe Fastlane do
         expect(Fastlane::Helper::SentryHelper).to receive(:call_sentry_cli).with(["sentry-cli", "releases", "set-commits", "1.0", "--auto"]).and_return(true)
 
         Fastlane::FastFile.new.parse("lane :test do
-            sentry_set_commits(
+            uninow_sentry_set_commits(
               version: '1.0',
               auto: true)
         end").runner.execute(:test)
@@ -42,7 +42,7 @@ describe Fastlane do
         expect(Fastlane::Helper::SentryConfig).to receive(:parse_api_params).and_return(true)
         expect(Fastlane::Helper::SentryHelper).to receive(:call_sentry_cli).with(["sentry-cli", "releases", "set-commits", "1.0"]).and_return(true)
         Fastlane::FastFile.new.parse("lane :test do
-            sentry_set_commits(
+            uninow_sentry_set_commits(
               version: '1.0')
         end").runner.execute(:test)
       end
@@ -52,7 +52,7 @@ describe Fastlane do
         expect(Fastlane::Helper::SentryConfig).to receive(:parse_api_params).and_return(true)
         expect(Fastlane::Helper::SentryHelper).to receive(:call_sentry_cli).with(["sentry-cli", "releases", "set-commits", "1.0"]).and_return(true)
         Fastlane::FastFile.new.parse("lane :test do
-            sentry_set_commits(
+            uninow_sentry_set_commits(
               version: '1.0',
               auto: false)
         end").runner.execute(:test)
@@ -64,7 +64,7 @@ describe Fastlane do
         expect(Fastlane::Helper::SentryHelper).to receive(:call_sentry_cli).with(["sentry-cli", "releases", "set-commits", "1.0", "--clear"]).and_return(true)
 
         Fastlane::FastFile.new.parse("lane :test do
-            sentry_set_commits(
+            uninow_sentry_set_commits(
               version: '1.0',
               clear: true)
         end").runner.execute(:test)
@@ -75,7 +75,7 @@ describe Fastlane do
         expect(Fastlane::Helper::SentryConfig).to receive(:parse_api_params).and_return(true)
         expect(Fastlane::Helper::SentryHelper).to receive(:call_sentry_cli).with(["sentry-cli", "releases", "set-commits", "1.0"]).and_return(true)
         Fastlane::FastFile.new.parse("lane :test do
-            sentry_set_commits(
+            uninow_sentry_set_commits(
               version: '1.0')
         end").runner.execute(:test)
       end
@@ -85,7 +85,7 @@ describe Fastlane do
         expect(Fastlane::Helper::SentryConfig).to receive(:parse_api_params).and_return(true)
         expect(Fastlane::Helper::SentryHelper).to receive(:call_sentry_cli).with(["sentry-cli", "releases", "set-commits", "1.0"]).and_return(true)
         Fastlane::FastFile.new.parse("lane :test do
-            sentry_set_commits(
+            uninow_sentry_set_commits(
               version: '1.0',
               clear: false)
         end").runner.execute(:test)
@@ -97,7 +97,7 @@ describe Fastlane do
         expect(Fastlane::Helper::SentryHelper).to receive(:call_sentry_cli).with(["sentry-cli", "releases", "set-commits", "1.0", "--commit", "abc"]).and_return(true)
 
         Fastlane::FastFile.new.parse("lane :test do
-            sentry_set_commits(
+            uninow_sentry_set_commits(
               version: '1.0',
               commit: 'abc')
         end").runner.execute(:test)
@@ -108,7 +108,7 @@ describe Fastlane do
         expect(Fastlane::Helper::SentryConfig).to receive(:parse_api_params).and_return(true)
         expect(Fastlane::Helper::SentryHelper).to receive(:call_sentry_cli).with(["sentry-cli", "releases", "set-commits", "1.0"]).and_return(true)
         Fastlane::FastFile.new.parse("lane :test do
-            sentry_set_commits(
+            uninow_sentry_set_commits(
               version: '1.0')
         end").runner.execute(:test)
       end

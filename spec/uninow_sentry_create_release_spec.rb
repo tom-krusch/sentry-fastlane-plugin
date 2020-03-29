@@ -8,7 +8,7 @@ describe Fastlane do
         expect(Fastlane::Helper::SentryHelper).to receive(:call_sentry_cli).with(["sentry-cli", "releases", "new", "app.idf-1.0"]).and_return(true)
 
         Fastlane::FastFile.new.parse("lane :test do
-            sentry_create_release(
+            uninow_sentry_create_release(
               version: '1.0',
               app_identifier: 'app.idf')
         end").runner.execute(:test)
@@ -20,7 +20,7 @@ describe Fastlane do
         expect(Fastlane::Helper::SentryHelper).to receive(:call_sentry_cli).with(["sentry-cli", "releases", "new", "1.0"]).and_return(true)
 
         Fastlane::FastFile.new.parse("lane :test do
-            sentry_create_release(
+            uninow_sentry_create_release(
               version: '1.0')
         end").runner.execute(:test)
       end
