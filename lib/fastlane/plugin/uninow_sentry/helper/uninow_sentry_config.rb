@@ -1,6 +1,6 @@
 module Fastlane
   module Helper
-    class SentryConfig
+    class UninowSentryConfig
       def self.common_api_config_items
         [
           FastlaneCore::ConfigItem.new(key: :url,

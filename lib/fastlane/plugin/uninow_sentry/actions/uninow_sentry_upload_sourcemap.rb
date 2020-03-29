@@ -4,8 +4,8 @@ module Fastlane
       def self.run(params)
         require 'shellwords'
 
-        Helper::SentryHelper.check_sentry_cli!
-        Helper::SentryConfig.parse_api_params(params)
+        Helper::UninowSentryHelper.check_sentry_cli!
+        Helper::UninowSentryConfig.parse_api_params(params)
 
         version = params[:version]
         sourcemap = params[:sourcemap]
@@ -40,7 +40,7 @@ module Fastlane
 
         command.push('--ignore-file').push(params[:ignore_file]) unless params[:ignore_file].nil?
 
-        Helper::SentryHelper.call_sentry_cli(command)
+        Helper::UninowSentryHelper.call_sentry_cli(command)
         UI.success("Successfully uploaded files to release: #{version}")
       end
 
@@ -60,7 +60,7 @@ module Fastlane
       end
 
       def self.available_options
-        Helper::SentryConfig.common_api_config_items + [
+        Helper::UninowSentryConfig.common_api_config_items + [
           FastlaneCore::ConfigItem.new(key: :version,
                                        description: "Release version on Sentry"),
           FastlaneCore::ConfigItem.new(key: :dist,

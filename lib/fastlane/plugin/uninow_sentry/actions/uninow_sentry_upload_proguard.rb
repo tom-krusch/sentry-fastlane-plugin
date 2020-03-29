@@ -2,8 +2,8 @@ module Fastlane
   module Actions
     class SentryUploadProguardAction < Action
       def self.run(params)
-        Helper::SentryHelper.check_sentry_cli!
-        Helper::SentryConfig.parse_api_params(params)
+        Helper::UninowSentryHelper.check_sentry_cli!
+        Helper::UninowSentryConfig.parse_api_params(params)
 
         # Params - mapping & manifest
         mapping_path = params[:mapping_path]
@@ -21,7 +21,7 @@ module Fastlane
           mapping_path
         ]
 
-        Helper::SentryHelper.call_sentry_cli(command)
+        Helper::UninowSentryHelper.call_sentry_cli(command)
         UI.success("Successfully uploaded mapping file!")
       end
 
@@ -41,7 +41,7 @@ module Fastlane
       end
 
       def self.available_options
-        Helper::SentryConfig.common_api_config_items + [
+        Helper::UninowSentryConfig.common_api_config_items + [
           FastlaneCore::ConfigItem.new(key: :mapping_path,
                                       env_name: "ANDROID_MAPPING_PATH",
                                       description: "Path to your proguard mapping.txt file",

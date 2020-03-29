@@ -1,9 +1,9 @@
 module Fastlane
   module Helper
-    class SentryHelper
+    class UninowSentryHelper
       def self.check_sentry_cli!
         unless `which sentry-cli`.include?('sentry-cli')
-          UI.error("You have to install sentry-cli version #{Fastlane::Sentry::CLI_VERSION} to use this plugin")
+          UI.error("You have to install sentry-cli version #{Fastlane::UninowSentry::CLI_VERSION} to use this plugin")
           UI.error("")
           UI.error("Install it using:")
           UI.command("brew install getsentry/tools/sentry-cli")
@@ -14,9 +14,9 @@ module Fastlane
         end
 
         sentry_cli_version = Gem::Version.new(`sentry-cli --version`.scan(/(?:\d+\.?){3}/).first)
-        required_version = Gem::Version.new(Fastlane::Sentry::CLI_VERSION)
+        required_version = Gem::Version.new(Fastlane::UninowSentry::CLI_VERSION)
         if sentry_cli_version < required_version
-          UI.user_error!("Your sentry-cli is outdated, please upgrade to at least version #{Fastlane::Sentry::CLI_VERSION} and start your lane again!")
+          UI.user_error!("Your sentry-cli is outdated, please upgrade to at least version #{Fastlane::UninowSentry::CLI_VERSION} and start your lane again!")
         end
 
         UI.success("sentry-cli #{sentry_cli_version} installed!")

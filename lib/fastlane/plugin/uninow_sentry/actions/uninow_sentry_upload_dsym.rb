@@ -2,8 +2,8 @@ module Fastlane
   module Actions
     class SentryUploadDsymAction < Action
       def self.run(params)
-        Helper::SentryHelper.check_sentry_cli!
-        Helper::SentryConfig.parse_api_params(params)
+        Helper::UninowSentryHelper.check_sentry_cli!
+        Helper::UninowSentryConfig.parse_api_params(params)
 
         # Params - dSYM
         dsym_path = params[:dsym_path]
@@ -23,7 +23,7 @@ module Fastlane
         command.push(params[:info_plist]) unless params[:info_plist].nil?
         command += dsym_paths
 
-        Helper::SentryHelper.call_sentry_cli(command)
+        Helper::UninowSentryHelper.call_sentry_cli(command)
         UI.success("Successfully uploaded dSYMs!")
       end
 
@@ -44,7 +44,7 @@ module Fastlane
       end
 
       def self.available_options
-        Helper::SentryConfig.common_api_config_items + [
+        Helper::UninowSentryConfig.common_api_config_items + [
           FastlaneCore::ConfigItem.new(key: :dsym_path,
                                       env_name: "SENTRY_DSYM_PATH",
                                       description: "Path to your symbols file. For iOS and Mac provide path to app.dSYM.zip",
