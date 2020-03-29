@@ -6,7 +6,7 @@ require 'fastlane/plugin/uninow_sentry/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'fastlane-plugin-uninow_sentry'
-  spec.version       = Fastlane::UniNowSentry::VERSION
+  spec.version       = Fastlane::UninowSentry::VERSION
   spec.author        = %q{Tom Krusch}
   spec.email         = %q{tom.krusch@uninow.de}
 
