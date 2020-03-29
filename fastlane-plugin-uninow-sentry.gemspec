@@ -5,13 +5,13 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'fastlane/plugin/sentry/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'fastlane-plugin-sentry'
+  spec.name          = 'fastlane-plugin-uninow-sentry.gemspec'
   spec.version       = Fastlane::Sentry::VERSION
-  spec.author        = %q{Sentry}
-  spec.email         = %q{hello@sentry.io}
+  spec.author        = %q{Tom Krusch}
+  spec.email         = %q{tom.krusch@uninow.de}
 
   spec.summary       = %q{Upload symbols to Sentry}
-  spec.homepage      = "https://github.com/getsentry/sentry-fastlane-plugin"
+  spec.homepage      = "https://github.com/tom-krusch/sentry-fastlane-plugin"
   spec.license       = "MIT"
 
   spec.files         = Dir["lib/**/*"] + %w(README.md LICENSE)
